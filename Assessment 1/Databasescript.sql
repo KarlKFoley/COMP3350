@@ -6,6 +6,7 @@ DROP TABLE TimePeriod
 DROP TABLE CourseAcademicProgrammeAssignment
 DROP TABLE Course
 DROP TABLE ProgramConvenor
+DROP TABLE MajorMinorCondition
 DROP TABLE MajorMinor
 DROP TABLE AcademicProgramme
 DROP TABLE DepartmentAssignment
@@ -15,21 +16,32 @@ DROP TABLE Room
 DROP TABLE Facility
 DROP TABLE Campus
 DROP TABLE Address
+DROP TABLE Postcode
 
+CREATE TABLE Postcode
+(
+	suburb CHAR(50), 
+	state CHAR(50), 
+	country CHAR(50),
+	postcode INTEGER NOT NULL
+	Primary key (country, state, suburb)
+)
+GO
 
 CREATE TABLE Address
 (
 	addressId INTEGER,
 	unit INTEGER, 
-	streetNumber INTEGER, 
-	streetName VARCHAR(MAX), 
-	suburb VARCHAR(MAX), 
-	states VARCHAR(MAX), 
-	postcode INTEGER, 
-	country VARCHAR(MAX)
+	streetNumber INTEGER NOT NULL, 
+	streetName VARCHAR(MAX) NOT NULL, 
+	suburb CHAR(50), 
+	state CHAR(50), 
+	country CHAR(50)
 	Primary Key (addressId)
+	Foreign Key (country, state, suburb) references Postcode ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 GO
+
 
 CREATE TABLE Campus
 (
@@ -37,7 +49,7 @@ CREATE TABLE Campus
 	name VARCHAR(MAX), 
 	addressId INTEGER
 	Primary Key (campusId)
-	Foreign Key (addressId) references  Address(addressId) ON UPDATE NO ACTION ON DELETE NO ACTION
+	Foreign Key (addressId) references Address(addressId) ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 GO
 
@@ -117,18 +129,19 @@ CREATE TABLE MajorMinor
 	name VARCHAR(MAX), 
 	description VARCHAR(MAX), 
 	totalCredits INTEGER, 
-	conditions VARCHAR(MAX)
 	Primary Key (code)
 )
 Go
 
---CREATE TABLE MinorConditions
---(
---	code INTEGER, 
---	condition VARCHAR(MAX)
---	Primary Key (code, condition)
---)
---GO
+CREATE TABLE MajorMinorCondition
+(
+	code INTEGER,
+	conditionId INTEGER,
+	condition VARCHAR(MAX)
+	Primary Key (code,conditionId)
+	Foreign Key (code) references MajorMinor(code) ON UPDATE NO ACTION ON DELETE CASCADE
+)
+GO
 
 CREATE TABLE ProgramConvenor
 (
@@ -171,8 +184,8 @@ CREATE TABLE TimePeriod
 (	
 	timePeriodId INTEGER, 
 	year INTEGER, 
-	type VARCHAR(MAX), 
-	semester BIT
+	semesterTrimesterNumber INTEGER,
+	isSemester BIT
 	Primary Key (timePeriodId)
 )
 GO
@@ -206,9 +219,9 @@ CREATE TABLE TimeSlot
 	timePeriodId INTEGER, 
 	campusId INTEGER
 	Primary Key (timeSlotId)
-	--Foreign Key (roomNumber, facilityId) references Room(roomNumber, facilityId) ON UPDATE NO ACTION ON DELETE NO ACTION,
+	Foreign Key (roomNumber, facilityId) references Room ON UPDATE NO ACTION ON DELETE NO ACTION,
 	Foreign Key (personId) references Person(personId)ON UPDATE NO ACTION ON DELETE NO ACTION,
-	--Foreign Key (courseId, timePeriodId,campusId) references CourseOffering(courseId, timePeriodId,campusId)ON UPDATE NO ACTION ON DELETE NO ACTION
+	Foreign Key (courseId, timePeriodId,campusId) references CourseOffering ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 GO
 
