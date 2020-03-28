@@ -16,3 +16,8 @@ BEGIN
 	PRINT 'Deleted table'
 	SELECT * FROM deleted
 END
+
+INSERT INTO Emp VALUES (1, 'Peter Chang', 100, null)
+
+DELETE Emp
+WHERE eno = 1
