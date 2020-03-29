@@ -132,9 +132,17 @@ INSERT INTO Address VALUES (2, NULL, 200, 'Ourimbah Street', 'Ourimbah', 'NSW', 
 INSERT INTO Course VALUES (1, 'Database 101', 10, 'a description');
 INSERT INTO Course VALUES (2, 'Basic IT', 10, 'a description');
 INSERT INTO Course VALUES (3, 'Advanced Database', 10, 'a description');
+INSERT INTO Course VALUES (4, 'Web 101', 10, 'a description');
+INSERT INTO Course VALUES (5, 'Med 101', 10, 'a description');
+INSERT INTO Course VALUES (6, 'Advanced Med', 10, 'a description');
+INSERT INTO Course VALUES (7, 'Hard course', 10, 'a description');
 
 INSERT INTO Prerequisite VALUES (1, 3);
 INSERT INTO Prerequisite VALUES (2, 3);
+INSERT INTO Prerequisite VALUES (5, 6);
+INSERT INTO Prerequisite VALUES (2, 7);
+INSERT INTO Prerequisite VALUES (5, 7);
+INSERT INTO Prerequisite VALUES (6, 7);
 
 INSERT INTO Campus VALUES (1,'Callaghan', 1);
 INSERT INTO Campus VALUES (2, 'Ourimbah', 2);
@@ -173,24 +181,59 @@ ON StudentRegistersInCourse
 FOR INSERT, UPDATE
 AS
 BEGIN
-	DECLARE @insertedValue INT
-	SELECT @insertedValue = courseId FROM inserted 
-	
+	DECLARE @insertedCourse INT
+	DECLARE @insertedPerson INT
+	SELECT @insertedCourse = courseId FROM inserted
+	SELECT @insertedPerson = personId FROM inserted 
+	-- check if any prerequisites exist for inserted course
 	IF (EXISTS(SELECT courseId
-		FROM Prerequisite p
-		WHERE @insertedValue = p.courseId))
+		FROM Prerequisite
+		WHERE @insertedCourse = courseId))
+		-- if yes declare cursor to bring up result of prerequisites for that course
 		BEGIN
-			RAISERROR ('this course has prerequisites', 9, 1)
-			ROLLBACK TRANSACTION
+			DECLARE @prereq INT
+			DECLARE @finalGrade VARCHAR(MAX)
+
+			-- declare cursor
+			DECLARE checkPrereqsCursor CURSOR
+			FOR
+			SELECT prerequisite
+			FROM Prerequisite
+			WHERE @insertedCourse = courseId
+
+			OPEN checkPrereqsCursor
+
+			FETCH NEXT FROM checkPrereqsCursor INTO @prereq
+
+			WHILE @@FETCH_STATUS = 0
+			BEGIN
+				SELECT @finalGrade = finalGrade
+				FROM StudentRegistersInCourse 
+				WHERE courseId = @prereq AND personId = @insertedPerson
+
+				IF (@finalGrade = 'P' OR @finalGrade = 'C' OR @finalGrade = 'D' OR @finalGrade = 'HD')
+					FETCH NEXT FROM checkPrereqsCursor INTO @prereq
+				ELSE
+					BEGIN
+					PRINT 'error cant continue'
+					-- Rollback the transaction
+					ROLLBACK TRANSACTION
+					END
+			
+			END
+			CLOSE checkPrereqsCursor
+			DEALLOCATE checkPrereqsCursor
 		END
 	ELSE
-		PRINT 'all is good'
+		PRINT 'There are no prerequisites for the course'
 END
+
 go
 
 
-INSERT INTO StudentRegistersInCourse VALUES (1, 1, 1, null, null);
-INSERT INTO StudentRegistersInCourse VALUES (1, 2, 1, null, null);
+INSERT INTO StudentRegistersInCourse VALUES (1, 1, 1, 51, 'P');
+INSERT INTO StudentRegistersInCourse VALUES (2, 2, 1, 51, 'P');
 INSERT INTO StudentRegistersInCourse VALUES (1, 3, 1, null, null);
 
 DELETE FROM StudentRegistersInCourse
+
