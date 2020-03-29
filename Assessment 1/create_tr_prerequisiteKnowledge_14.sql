@@ -173,7 +173,24 @@ ON StudentRegistersInCourse
 FOR INSERT, UPDATE
 AS
 BEGIN
-	IF	
-		
+	DECLARE @insertedValue INT
+	SELECT @insertedValue = courseId FROM inserted 
+	
+	IF (EXISTS(SELECT courseId
+		FROM Prerequisite p
+		WHERE @insertedValue = p.courseId))
+		BEGIN
+			RAISERROR ('this course has prerequisites', 9, 1)
+			ROLLBACK TRANSACTION
+		END
+	ELSE
+		PRINT 'all is good'
 END
 go
+
+
+INSERT INTO StudentRegistersInCourse VALUES (1, 1, 1, null, null);
+INSERT INTO StudentRegistersInCourse VALUES (1, 2, 1, null, null);
+INSERT INTO StudentRegistersInCourse VALUES (1, 3, 1, null, null);
+
+DELETE FROM StudentRegistersInCourse
