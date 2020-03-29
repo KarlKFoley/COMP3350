@@ -256,9 +256,9 @@ GO
 CREATE TABLE StudentRegistersInCourse
 (
 	personId INTEGER NOT NULL,
+	courseId INTEGER NOT NULL,
 	timePeriodId INTEGER NOT NULL,
 	campusId INTEGER NOT NULL,
-	courseId INTEGER NOT NULL,
 	finalMark INTEGER, 
 	finalGrade VARCHAR(MAX) 
 	Primary Key (personId, courseId, timePeriodId, campusId)
