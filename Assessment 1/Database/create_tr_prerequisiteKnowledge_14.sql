@@ -397,9 +397,9 @@ VALUES
 /* Dummy Prerequisite */
 INSERT INTO Prerequisite(courseId, PrereqId)
 VALUES 
-	(1, 3),
-	(1, 2),
-	(2, 3);
+	(3, 1),
+	(3, 2);
+
 
 /* Dummy CourseAcademicProgrammeAssignment */
 INSERT INTO CourseAcademicProgrammeAssignment(courseId, academicProgrammeId, startDate, endDate, type)
@@ -453,21 +453,7 @@ VALUES
 (1,5,1,2020-01-31,NULL),
 (2,6,1,2020-01-31,NULL);
 
-/* Dummy StudentRegistersInCourse */
-INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark, finalGrade)
-VALUES
-(1,1,1,1,NULL,NULL),
-(2,1,1,1,NULL,NULL),
-(3,1,1,1,NULL,NULL),
-(4,1,1,1,NULL,NULL),
-(1,2,1,1,NULL,NULL),
-(2,2,1,1,NULL,NULL),
-(3,2,1,1,NULL,NULL),
-(4,2,1,1,NULL,NULL),
-(4,3,1,1,NULL,NULL),
-(3,3,1,1,NULL,NULL),
-(2,3,1,1,NULL,NULL),
-(1,3,1,1,NULL,NULL);
+
 
 
 SELECT * FROM StudentRegistersInCourse
@@ -522,23 +508,32 @@ BEGIN
 			OPEN checkPrereqsCursor
 
 			FETCH NEXT FROM checkPrereqsCursor INTO @prereq
-
 			WHILE @@FETCH_STATUS = 0
-			BEGIN
-				SELECT @finalGrade = finalGrade
-				FROM StudentRegistersInCourse 
-				WHERE courseId = @prereq AND personId = @insertedPerson
-
-				IF (@finalGrade = 'P' OR @finalGrade = 'C' OR @finalGrade = 'D' OR @finalGrade = 'HD')
-					FETCH NEXT FROM checkPrereqsCursor INTO @prereq
-				ELSE
-					BEGIN
-					PRINT 'error cant continue'
-					-- Rollback the transaction
-					ROLLBACK TRANSACTION
-					END
 			
-			END
+				BEGIN
+					PRINT 'prereq value is ' + CAST(@prereq AS VARCHAR)
+					
+					SELECT @finalGrade = finalGrade
+					FROM StudentRegistersInCourse 
+					WHERE courseId = @prereq AND personId = @insertedPerson
+
+					IF (@finalGrade = 'P' OR @finalGrade = 'C' OR @finalGrade = 'D' OR @finalGrade = 'HD')
+						BEGIN
+						PRINT 'prereq value is ' + CAST(@prereq AS VARCHAR)
+						PRINT 'they passed the course'
+						
+						FETCH NEXT FROM checkPrereqsCursor INTO @prereq
+						END
+						
+					ELSE
+						BEGIN
+						PRINT 'no grade or fail for course'
+						-- Rollback the transaction
+						ROLLBACK TRANSACTION
+						END
+
+				END
+			
 			CLOSE checkPrereqsCursor
 			DEALLOCATE checkPrereqsCursor
 		END
@@ -548,12 +543,15 @@ END
 
 go
 
-INSERT INTO StudentRegistersInCourse VALUES (7, 3, 1, 1, 51, 'P');
-INSERT INTO StudentRegistersInCourse VALUES (6, 3, 1, 1, 51, 'P');
-INSERT INTO StudentRegistersInCourse VALUES (6, 2, 1, 1, 51, 'P');
+INSERT INTO StudentRegistersInCourse VALUES (1, 1, 1, 1, 51, 'P');
+INSERT INTO StudentRegistersInCourse VALUES (1, 2, 1, 1, 51, 'P');
+INSERT INTO StudentRegistersInCourse VALUES (1, 3, 1, 1, null, null);
 INSERT INTO StudentRegistersInCourse VALUES (7, 1, 1, 1, 51, 'P');
 
 SELECT * FROM StudentRegistersInCourse
 
 DELETE FROM StudentRegistersInCourse
+
+
+
 
