@@ -480,10 +480,8 @@ VALUES
 /* Dummy Prerequisite */
 INSERT INTO Prerequisite(courseId, PrereqId)
 VALUES 
-	(1, 3),
-	(1, 2),
-	(1, 4),
-	(2, 3);
+	(3, 1),
+	(3, 2);
 
 /* Dummy CourseAcademicProgrammeAssignment */
 INSERT INTO CourseAcademicProgrammeAssignment(courseId, academicProgrammeId, startDate, endDate, type)
