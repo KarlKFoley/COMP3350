@@ -7,20 +7,22 @@ CREATE TRIGGER tr_EnforceCourseRegistrationPolicy
 ON StudentRegistersInCourse
 FOR INSERT, UPDATE
 AS
+
 BEGIN
 	DECLARE @insertedCourse INT
 	DECLARE @insertedPerson INT
 	SELECT @insertedCourse = courseId FROM inserted
 	SELECT @insertedPerson = personId FROM inserted 
+	PRINT @insertedCourse
 	-- check if any prerequisites exist for inserted course
 	IF (EXISTS(SELECT courseId
 		FROM Prerequisite
 		WHERE @insertedCourse = courseId))
 		-- if yes declare cursor to bring up result of prerequisites for that course
 		BEGIN
-			DECLARE @prereq INT
+			DECLARE @prereq INT, @AvaibleToRegister BIT
 			DECLARE @finalGrade VARCHAR(MAX)
-
+			SET @AvaibleToRegister = 1
 			-- declare cursor
 			DECLARE checkPrereqsCursor CURSOR
 			FOR
@@ -33,6 +35,7 @@ BEGIN
 			FETCH NEXT FROM checkPrereqsCursor INTO @prereq
 			WHILE @@FETCH_STATUS = 0
 				BEGIN
+				PRINT  @prereq
 					SET @finalGrade = null
 					
 					SELECT @finalGrade = finalGrade
@@ -49,16 +52,23 @@ BEGIN
 						BEGIN
 						PRINT 'No grade or fail for course'
 						-- Rollback the transaction
-						ROLLBACK
+						SET @AvaibleToRegister = 0
+						FETCH NEXT FROM checkPrereqsCursor INTO @prereq
 						END
 
 				END
 			
 			CLOSE checkPrereqsCursor
 			DEALLOCATE checkPrereqsCursor
+			IF @AvaibleToRegister = 0
+			BEGIN
+				ROLLBack
+			END
 		END
 	ELSE
+	BEGIN
 		PRINT 'There are no prerequisites for the course'
+	END
 END
 GO
 

@@ -267,7 +267,7 @@ CREATE TABLE StudentRegistersInCourse
 	finalMark INTEGER, 
 	finalGrade VARCHAR(MAX) 
 	Primary Key (personId, courseId, timePeriodId, campusId)
-	Foreign Key (personId) references Person(personId) ON UPDATE NO ACTION ON DELETE CASCADE,
+	Foreign Key (personId) references Person(personId) ON UPDATE NO ACTION ON DELETE NO ACTION,
 	Foreign Key (courseId, timePeriodId, campusId) references CourseOffering ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 GO
@@ -354,7 +354,6 @@ BEGIN
 	SELECT @courseId = courseId FROM inserted
 	SELECT @timePeriodId = timePeriodId FROM inserted
 	SELECT @campusId = campusId FROM inserted
-	PRINT 'inserted table'
 	IF @grade = NULL
 		BEGIN
 			UPDATE StudentRegistersInCourse SET finalGrade = NULL
@@ -544,7 +543,8 @@ VALUES
 INSERT INTO Prerequisite(courseId, PrereqId)
 VALUES 
 	(3, 1),
-	(3, 2);
+	(3, 2),
+	(4, 2);
 
 /* Dummy CourseAcademicProgrammeAssignment */
 INSERT INTO CourseAcademicProgrammeAssignment(courseId, academicProgrammeId, startDate, endDate, type)
@@ -569,7 +569,8 @@ INSERT INTO CourseOffering(courseId, timePeriodId, campusId, courseCoordinator)
 VALUES 
 	(1, 1, 1, 5),
 	(2, 1, 1, 6),
-	(3, 1, 1, 7);
+	(3, 1, 1, 7),
+	(4, 1, 1, 7);
 
 /* Dummy TimeSlot */
 INSERT INTO TimeSlot( day, startTime, endTime, roomNumber, facilityId, teacher, courseId,timePeriodId,campusId)

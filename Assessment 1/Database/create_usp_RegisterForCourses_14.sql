@@ -9,9 +9,24 @@ CREATE PROCEDURE usp_RegisterForCourses
 	@list_of_Courses courseListForStudentType READONLY
 AS
 BEGIN
-	INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId)
-	SELECT @stdNo, *
-	FROM @list_of_Courses;
+	DECLARE @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
+			-- declare cursor
+	DECLARE test CURSOR
+	FOR
+	SELECT * 
+	FROM @list_of_Courses
+			
+	OPEN test
+
+	FETCH NEXT FROM test INTO @courseId, @timePeriodId, @campusId
+	WHILE @@FETCH_STATUS = 0
+		BEGIN
+			INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId)
+			VALUES(@stdNo, @courseId, @timePeriodId, @campusId)
+			FETCH NEXT FROM test INTO @courseId, @timePeriodId, @campusId
+		END
+	CLOSE test
+	DEALLOCATE test
 END
 GO
 
