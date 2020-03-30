@@ -1,10 +1,13 @@
+/*Create Stored Procedure in tsql beacuse the amount of documentation on stored proceduce in tql was greater*/
+
 DROP PROCEDURE usp_RegisterForCourses
 DROP TYPE courseListForStudentType
 
-
+-- Creating type for insert a list of course offerings is created
 CREATE TYPE courseListForStudentType AS TABLE (courseId INT, timePeriodId INT, campusId INT);
 GO
 
+-- PROCEDURE is created
 CREATE PROCEDURE usp_RegisterForCourses
 	@stdNo INT,
 	@list_of_Courses courseListForStudentType READONLY
@@ -12,7 +15,7 @@ AS
 BEGIN
 	DECLARE @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
 	DECLARE @ErrorVariable INT
-	-- declare cursor
+	-- declare cursor for each listed item
 	DECLARE test CURSOR
 	FOR
 	SELECT * 
@@ -29,6 +32,7 @@ BEGIN
 		END TRY
 		BEGIN CATCH
 			SET @ErrorVariable = @@ERROR
+			--throwing correct errors if needed
 			IF @ErrorVariable = 3609
 			BEGIN 
 				RAISERROR(50001, 16, 1, @courseId)
