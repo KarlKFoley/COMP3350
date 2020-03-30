@@ -1,6 +1,7 @@
 DROP PROCEDURE usp_RegisterForCourses
 DROP TYPE courseListForStudentType
 
+
 CREATE TYPE courseListForStudentType AS TABLE (courseId INT, timePeriodId INT, campusId INT);
 GO
 
@@ -11,7 +12,7 @@ AS
 BEGIN
 	DECLARE @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
 	DECLARE @ErrorVariable INT
-			-- declare cursor
+	-- declare cursor
 	DECLARE test CURSOR
 	FOR
 	SELECT * 
@@ -28,13 +29,23 @@ BEGIN
 		END TRY
 		BEGIN CATCH
 			SET @ErrorVariable = @@ERROR
-			print @ErrorVariable
+			IF @ErrorVariable = 3609
+			BEGIN 
+				RAISERROR(50001, 16, 1, @courseId)
+			END
+			ELSE IF @ErrorVariable = 2627
+			BEGIN 
+				RAISERROR(50002, 16, 1, @courseId)
+			END
+			SET @ErrorVariable = @@ERROR
+			PRINT @ErrorVariable
 			FETCH NEXT FROM test INTO @courseId, @timePeriodId, @campusId
 		END CATCH
 	CLOSE test
 	DEALLOCATE test
 END
 GO
+
 
 
 
