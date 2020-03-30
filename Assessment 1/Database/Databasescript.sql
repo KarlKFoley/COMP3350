@@ -1,3 +1,8 @@
+--BEFORE RUNNING PLEASE READ
+-- Run script from line 24 onwards down for first push to local db
+-- All subsequent builds of this script just run the drop tables will remove all tables and add them 
+-- Add the end of running this script there will be a select statement for each table showing data which is in them on a successful build
+-- This must be run befor running the trigger or stored Procedure
 DROP TABLE StudentRegistersInCourse
 DROP TABLE StudentEnrolment
 DROP TABLE TimeSlot
@@ -546,7 +551,7 @@ INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId,
 INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(2,3,1,1,79); 
 INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(1,3,1,1,96); 
 
-
+--Check to make sure all tables were added correctly
 SELECT * FROM StudentRegistersInCourse
 SELECT * FROM StudentEnrolment
 SELECT * FROM TimeSlot
