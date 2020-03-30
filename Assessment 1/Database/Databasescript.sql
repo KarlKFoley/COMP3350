@@ -1,8 +1,8 @@
 --BEFORE RUNNING PLEASE READ
 -- Run script from line 24 onwards down for first push to local db
 -- All subsequent builds of this script just run the drop tables will remove all tables and add them 
--- Add the end of running this script there will be a select statement for each table showing data which is in them on a successful build
--- This must be run befor running the trigger or stored Procedure
+-- At the end of running this script there will be a select statement for each table showing data which is in them on a successful build
+-- This must be run before running the trigger or stored Procedure
 DROP TABLE StudentRegistersInCourse
 DROP TABLE StudentEnrolment
 DROP TABLE TimeSlot
@@ -272,16 +272,79 @@ CREATE TABLE StudentRegistersInCourse
 )
 GO
 
+/* Included business logic */
+
+-- Makes sure that the person is a student at the time of insert 
+-- Does not matter if the person is no longer a student 
+CREATE TRIGGER tr_IsStudent
+ON StudentRegistersInCourse
+AFTER INSERT
+AS
+BEGIN
+	DECLARE @studentID INT, @isStudent BIT
+	SELECT @studentID = personId FROM inserted
+	SELECT @isStudent = isStudent
+	FROM Person
+	WHERE @studentID = personId
+	IF(@isStudent = 0)
+	BEGIN
+		ROLLBACK
+	END
+END
+GO
+
+-- Makes sure that the person is a Staff at the time of insert on DepartmentAssignment
+-- Does not matter if the person is no longer a Staff 
+CREATE TRIGGER tr_IsStaffForDepartmentAssignment
+ON DepartmentAssignment
+AFTER INSERT, UPDATE
+AS
+BEGIN
+	DECLARE @studentID INT, @isStudent BIT
+	SELECT @studentID = personId FROM inserted
+	SELECT @isStudent = isStudent
+	FROM Person
+	WHERE @studentID = personId
+	IF(@isStudent = 0)
+	BEGIN
+		ROLLBACK
+	END
+END
+GO
+
+-- Makes sure that the person is a Staff at the time of insert on ProgramConvenor
+-- Does not matter if the person is no longer a Staff 
+CREATE TRIGGER tr_IsStaffForProgramConvenor
+ON ProgramConvenor
+AFTER INSERT, UPDATE
+AS
+BEGIN
+	DECLARE @StaffID INT, @isStaff BIT
+	SELECT @StaffID = personId FROM inserted
+	SELECT @isStaff = isStaff
+	FROM Person
+	WHERE @StaffID = personId
+	IF(@isStaff = 0)
+	BEGIN
+		ROLLBACK
+	END
+END
+GO
+
+
+-- Changes the FinalGrade to the correct Grade based on Final Mark
+-- Does not handle multi line insert -- outside spec of assessment
 CREATE TRIGGER tr_GiveCourseAGrade
 ON StudentRegistersInCourse
 AFTER INSERT, UPDATE
 AS
 BEGIN
-	DECLARE @pass INT, @credit INT, @distinction INT,@highDistinction INT, @grade INT, @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
+	DECLARE @pass INT, @credit INT, @distinction INT,@highDistinction INT, @fullMarks INT, @grade INT, @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
 	SET @pass = 50
 	SET @credit = 65
 	SET @distinction = 75
 	SET @highDistinction = 85
+	SET @fullMarks=100
 
 	IF @@ROWCOUNT =0 
     RETURN
@@ -336,7 +399,7 @@ BEGIN
 			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
 			StudentRegistersInCourse.campusId = @campusId;
 		END
-	ELSE 
+	ELSE IF @grade <= @fullMarks
 		BEGIN
 			UPDATE StudentRegistersInCourse SET finalGrade = 'HD'
 			WHERE StudentRegistersInCourse.personId = @personId AND
@@ -463,10 +526,10 @@ VALUES
 /* Dummy ProgramConvenor */
 INSERT INTO ProgramConvenor(personId, academicProgrammeId, startDate, endDate)
 VALUES
-	(1,1,2020-01-31,NULL),
-	(2,3,2020-01-31,NULL),
-	(3,1,2020-01-31,NULL),
-	(4,2,2020-01-31,NULL);
+	(6,1,2020-01-31,NULL),
+	(7,3,2020-01-31,NULL),
+	(8,1,2020-01-31,NULL),
+	(6,2,2020-01-31,NULL);
 
 /* Dummy Course */
 INSERT INTO Course(name, numberOfcredits, description)
@@ -547,7 +610,7 @@ INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId,
 INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(4,3,1,1,71); 
 INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(3,3,1,1,57); 
 INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(2,3,1,1,79); 
-INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(1,3,1,1,96); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(1,3,1,1,96);
 
 --Check to make sure all tables were added correctly
 SELECT * FROM StudentRegistersInCourse

@@ -12,7 +12,7 @@ INSERT @courseOfferingsToRegisterIn (courseId, timePeriodId, campusId)
 --FROM @courseOfferingsToRegisterIn
 
 DECLARE @StudentNumber INT
-SET @StudentNumber = 4
+SET @StudentNumber = 6
 
 EXEC usp_RegisterForCourses @StudentNumber, @courseOfferingsToRegisterIn;
 
@@ -23,6 +23,8 @@ FROM StudentRegistersInCourse
 --Only run to clear table - allows for no clashes
 
 DELETE StudentRegistersInCourse
+
+
 
 /*
 Inserts a couse that has a precequist that was not been forfilled this will fail and give error messages
@@ -38,7 +40,7 @@ SELECT *
 FROM @courseOfferingsToRegisterIn
 
 DECLARE @StudentNumber INT
-SET @StudentNumber = 7
+SET @StudentNumber = 4
 
 EXEC usp_RegisterForCourses @StudentNumber, @courseOfferingsToRegisterIn;
 
@@ -46,4 +48,34 @@ EXEC usp_RegisterForCourses @StudentNumber, @courseOfferingsToRegisterIn;
 SELECT *
 FROM StudentRegistersInCourse
 
+--Only run to clear table - allows for no clashes
+DELETE StudentRegistersInCourse
+
+
+
+/*
+Inserts a couse that has a precequist that was not been forfilled this will fail and give error messages
+
+*/
+
+DECLARE @courseOfferingsToRegisterIn AS courseListForStudentType;
+
+INSERT INTO @courseOfferingsToRegisterIn (courseId, timePeriodId, campusId)
+VALUES
+(3,1,1),
+(1,1,1);
+
+SELECT *
+FROM @courseOfferingsToRegisterIn
+
+DECLARE @StudentNumber INT
+SET @StudentNumber = 4
+
+EXEC usp_RegisterForCourses @StudentNumber, @courseOfferingsToRegisterIn;
+
+
+SELECT *
+FROM StudentRegistersInCourse
+
+--Only run to clear table - allows for no clashes
 DELETE StudentRegistersInCourse
