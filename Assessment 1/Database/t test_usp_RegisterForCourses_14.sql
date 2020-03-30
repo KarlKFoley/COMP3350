@@ -92,7 +92,7 @@ VALUES
 (1,1,1);
 
 DECLARE @StudentNumber INT
-SET @StudentNumber = 2
+SET @StudentNumber = 3
 
 EXEC usp_RegisterForCourses @StudentNumber, @courseOfferingsToRegisterIn;
 

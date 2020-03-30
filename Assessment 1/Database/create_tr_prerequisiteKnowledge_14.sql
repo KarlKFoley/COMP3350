@@ -62,7 +62,7 @@ BEGIN
 			DEALLOCATE checkPrereqsCursor
 			IF @AvaibleToRegister = 0
 			BEGIN
-				ROLLBack
+				ROLLBACK TRANSACTION 
 			END
 		END
 	ELSE

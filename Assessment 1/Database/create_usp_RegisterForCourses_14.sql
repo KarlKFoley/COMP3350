@@ -10,6 +10,7 @@ CREATE PROCEDURE usp_RegisterForCourses
 AS
 BEGIN
 	DECLARE @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
+	DECLARE @ErrorVariable INT
 			-- declare cursor
 	DECLARE test CURSOR
 	FOR
@@ -20,11 +21,16 @@ BEGIN
 
 	FETCH NEXT FROM test INTO @courseId, @timePeriodId, @campusId
 	WHILE @@FETCH_STATUS = 0
-		BEGIN
+		BEGIN TRY
 			INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId)
 			VALUES(@stdNo, @courseId, @timePeriodId, @campusId)
 			FETCH NEXT FROM test INTO @courseId, @timePeriodId, @campusId
-		END
+		END TRY
+		BEGIN CATCH
+			SET @ErrorVariable = @@ERROR
+			print @ErrorVariable
+			FETCH NEXT FROM test INTO @courseId, @timePeriodId, @campusId
+		END CATCH
 	CLOSE test
 	DEALLOCATE test
 END
