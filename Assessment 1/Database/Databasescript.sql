@@ -265,6 +265,84 @@ CREATE TABLE StudentRegistersInCourse
 	Foreign Key (personId) references Person(personId) ON UPDATE NO ACTION ON DELETE CASCADE,
 	Foreign Key (courseId, timePeriodId, campusId) references CourseOffering ON UPDATE NO ACTION ON DELETE NO ACTION
 )
+GO
+
+CREATE TRIGGER tr_GiveCourseAGrade
+ON StudentRegistersInCourse
+AFTER INSERT, UPDATE
+AS
+BEGIN
+	DECLARE @pass INT, @credit INT, @distinction INT,@highDistinction INT, @grade INT, @personId INT, @courseId INT, @timePeriodId INT, @campusId INT
+	SET @pass = 50
+	SET @credit = 65
+	SET @distinction = 75
+	SET @highDistinction = 85
+
+	IF @@ROWCOUNT =0 
+    RETURN
+
+	SELECT @grade = finalMark FROM inserted
+	SELECT @personId = personId FROM inserted
+	SELECT @courseId = courseId FROM inserted
+	SELECT @timePeriodId = timePeriodId FROM inserted
+	SELECT @campusId = campusId FROM inserted
+	PRINT 'inserted table'
+	IF @grade = NULL
+		BEGIN
+			UPDATE StudentRegistersInCourse SET finalGrade = NULL
+			WHERE StudentRegistersInCourse.personId = @personId AND
+			StudentRegistersInCourse.courseId = @courseId AND
+			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
+			StudentRegistersInCourse.campusId = @campusId;
+		END
+	-- Check to see if Failed
+	ELSE IF @grade < @pass
+		BEGIN
+			UPDATE StudentRegistersInCourse SET finalGrade = 'F'
+			WHERE StudentRegistersInCourse.personId = @personId AND
+			StudentRegistersInCourse.courseId = @courseId AND
+			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
+			StudentRegistersInCourse.campusId = @campusId;
+		END
+	-- Check to see if Passed
+	ELSE IF @grade < @credit
+		BEGIN
+			UPDATE StudentRegistersInCourse SET finalGrade = 'P'
+			WHERE StudentRegistersInCourse.personId = @personId AND
+			StudentRegistersInCourse.courseId = @courseId AND
+			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
+			StudentRegistersInCourse.campusId = @campusId;
+		END
+	-- Check to see if Credit
+	ELSE IF @grade < @distinction
+		BEGIN
+			UPDATE StudentRegistersInCourse SET finalGrade = 'C'
+			WHERE StudentRegistersInCourse.personId = @personId AND
+			StudentRegistersInCourse.courseId = @courseId AND
+			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
+			StudentRegistersInCourse.campusId = @campusId;
+		END
+	-- Check to see if Credit
+	ELSE IF @grade < @highDistinction
+		BEGIN
+			UPDATE StudentRegistersInCourse SET finalGrade = 'D'
+			WHERE StudentRegistersInCourse.personId = @personId AND
+			StudentRegistersInCourse.courseId = @courseId AND
+			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
+			StudentRegistersInCourse.campusId = @campusId;
+		END
+	ELSE 
+		BEGIN
+			UPDATE StudentRegistersInCourse SET finalGrade = 'HD'
+			WHERE StudentRegistersInCourse.personId = @personId AND
+			StudentRegistersInCourse.courseId = @courseId AND
+			StudentRegistersInCourse.timePeriodId = @timePeriodId AND
+			StudentRegistersInCourse.campusId = @campusId;
+		END
+
+END
+ 
+GO 
 
 
 /*    --- DUMMY DATA ---    */
@@ -455,20 +533,18 @@ VALUES
 (2,6,1,2020-01-31,NULL);
 
 /* Dummy StudentRegistersInCourse */
-INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark, finalGrade)
-VALUES
-(1,1,1,1,NULL,NULL),
-(2,1,1,1,NULL,NULL),
-(3,1,1,1,NULL,NULL),
-(4,1,1,1,NULL,NULL),
-(1,2,1,1,NULL,NULL),
-(2,2,1,1,NULL,NULL),
-(3,2,1,1,NULL,NULL),
-(4,2,1,1,NULL,NULL),
-(4,3,1,1,NULL,NULL),
-(3,3,1,1,NULL,NULL),
-(2,3,1,1,NULL,NULL),
-(1,3,1,1,NULL,NULL);
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(1,1,1,1,30); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(2,1,1,1,78); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(3,1,1,1,57); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(4,1,1,1,49); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(1,2,1,1,57); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(2,2,1,1,67); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(3,2,1,1,83); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(4,2,1,1,66); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(4,3,1,1,71); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(3,3,1,1,57); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(2,3,1,1,79); 
+INSERT INTO StudentRegistersInCourse(personId, courseId, timePeriodId, campusId, finalMark)VALUES(1,3,1,1,96); 
 
 
 SELECT * FROM StudentRegistersInCourse
