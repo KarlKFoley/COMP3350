@@ -16,9 +16,6 @@ DECLARE @courseOfferingsToRegisterIn AS courseListForStudentType;
 INSERT INTO @courseOfferingsToRegisterIn (courseId, timePeriodId, campusId)
 VALUES(3,1,1);
 
-SELECT *
-FROM @courseOfferingsToRegisterIn
-
 DECLARE @StudentNumber INT
 SET @StudentNumber = 2
 
@@ -28,8 +25,6 @@ EXEC usp_RegisterForCourses @StudentNumber, @courseOfferingsToRegisterIn;
 SELECT *
 FROM StudentRegistersInCourse
 
---Only run to clear table - before moving onto next use case
-DELETE StudentRegistersInCourse
 
 /*
 3. Inserts 2 couse that have no precequist so added correctly
