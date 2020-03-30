@@ -2,6 +2,7 @@
 DROP TRIGGER tr_EnforceCourseRegistrationPolicy
 GO
 
+-- Trigger is created
 CREATE TRIGGER tr_EnforceCourseRegistrationPolicy
 ON StudentRegistersInCourse
 FOR INSERT, UPDATE
