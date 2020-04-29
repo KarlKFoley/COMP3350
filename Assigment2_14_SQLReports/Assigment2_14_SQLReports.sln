@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Assigment2_14_SQLReports", "Assigment2_14_SQLReports\Assigment2_14_SQLReports.rptproj", "{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.Debug|Default.ActiveCfg = Debug
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.Debug|Default.Build.0 = Debug
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.Debug|Default.Deploy.0 = Debug
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.DebugLocal|Default.Build.0 = DebugLocal
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.Release|Default.ActiveCfg = Release
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.Release|Default.Build.0 = Release
+		{FF6BF02C-4D82-4C8E-A46C-82F36F05A0ED}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B9D7696-F526-4074-99F9-CED70E86A10E}
+	EndGlobalSection
+EndGlobal
