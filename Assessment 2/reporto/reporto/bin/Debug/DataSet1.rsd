@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>SELECT City_1.[State Province], Dimension.Date.Month, Dimension.Date.[Calendar Year], Fact.[Order].[Total Including Tax]
+FROM     Dimension.City AS City_1 INNER JOIN
+                  Fact.[Order] ON City_1.[City Key] = Fact.[Order].[City Key] INNER JOIN
+                  Dimension.Date ON Fact.[Order].[Order Date Key] = Dimension.Date.Date AND Fact.[Order].[Picked Date Key] = Dimension.Date.Date</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="State_Province">
+        <DataField>State Province</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Month">
+        <DataField>Month</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Calendar_Year">
+        <DataField>Calendar Year</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Total_Including_Tax">
+        <DataField>Total Including Tax</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
