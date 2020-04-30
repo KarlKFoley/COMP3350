@@ -411,7 +411,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value />
+                                        <Value>totalForYear</Value>
                                         <Style>
                                           <FontFamily>Arial</FontFamily>
                                         </Style>
