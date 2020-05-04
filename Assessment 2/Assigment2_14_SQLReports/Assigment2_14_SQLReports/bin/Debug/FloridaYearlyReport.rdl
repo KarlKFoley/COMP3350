@@ -17,10 +17,10 @@
     <DataSet Name="FloridaAnnualSales">
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT        Fact.[Order].[Total Including Tax], City_1.[State Province], Dimension.Date.Month, Dimension.Date.[Calendar Year]
+        <CommandText>SELECT        City_1.[State Province], Dimension.Date.Month, Dimension.Date.[Calendar Year], Dimension.Date.[Calendar Month Number], Fact.Sale.[Total Including Tax]
 FROM            Dimension.City AS City_1 INNER JOIN
-                         Fact.[Order] ON City_1.[City Key] = Fact.[Order].[City Key] INNER JOIN
-                         Dimension.Date ON Fact.[Order].[Order Date Key] = Dimension.Date.Date AND Fact.[Order].[Picked Date Key] = Dimension.Date.Date</CommandText>
+                         Fact.Sale ON City_1.[City Key] = Fact.Sale.[City Key] INNER JOIN
+                         Dimension.Date ON Fact.Sale.[Invoice Date Key] = Dimension.Date.Date AND Fact.Sale.[Delivery Date Key] = Dimension.Date.Date</CommandText>
       </Query>
       <Fields>
         <Field Name="Total_Including_Tax">
@@ -39,9 +39,9 @@ FROM            Dimension.City AS City_1 INNER JOIN
           <DataField>Calendar Year</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Order_Date_Key">
-          <DataField>Order Date Key</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Calendar_Month_Number">
+          <DataField>Calendar Month Number</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -54,7 +54,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.84938cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -70,8 +70,10 @@ FROM            Dimension.City AS City_1 INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Including Tax</Value>
-                                  <Style />
+                                  <Value>Monthly Sales Amount</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -83,6 +85,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Gray</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -105,9 +108,9 @@ FROM            Dimension.City AS City_1 INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!Total_Including_Tax.Value)</Value>
                                   <Style>
-                                    <Format>'$'0.00;('$'0.00)</Format>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -146,6 +149,8 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                   <Value>=Sum(Fields!Total_Including_Tax.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-AU</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -158,47 +163,12 @@ FROM            Dimension.City AS City_1 INNER JOIN
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>Lime</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Total_Including_Tax2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Total_Including_Tax.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Total_Including_Tax2</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-AU</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -228,6 +198,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                 <Value> Year</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -240,6 +211,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>Gray</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -263,6 +235,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                     <Value>Month</Value>
                                     <Style>
                                       <FontFamily>Arial</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -275,6 +248,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                 <Color>LightGrey</Color>
                                 <Style>Solid</Style>
                               </Border>
+                              <BackgroundColor>Gray</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -347,56 +321,65 @@ FROM            Dimension.City AS City_1 INNER JOIN
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="Month">
+                          <Group Name="Calendar_Month_Number">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!Month.Value</GroupExpression>
+                              <GroupExpression>=Fields!Calendar_Month_Number.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!Month.Value</Value>
+                              <Value>=Fields!Calendar_Month_Number.Value</Value>
                             </SortExpression>
                           </SortExpressions>
-                          <TablixHeader>
-                            <Size>2.5cm</Size>
-                            <CellContents>
-                              <Textbox Name="Month1">
-                                <CanGrow>true</CanGrow>
-                                <KeepTogether>true</KeepTogether>
-                                <Paragraphs>
-                                  <Paragraph>
-                                    <TextRuns>
-                                      <TextRun>
-                                        <Value>=Fields!Month.Value</Value>
-                                        <Style>
-                                          <FontFamily>Arial</FontFamily>
-                                          <Format>y</Format>
-                                        </Style>
-                                      </TextRun>
-                                    </TextRuns>
-                                    <Style />
-                                  </Paragraph>
-                                </Paragraphs>
-                                <rd:DefaultName>Month1</rd:DefaultName>
-                                <Style>
-                                  <Border>
-                                    <Color>LightGrey</Color>
-                                    <Style>Solid</Style>
-                                  </Border>
-                                  <PaddingLeft>2pt</PaddingLeft>
-                                  <PaddingRight>2pt</PaddingRight>
-                                  <PaddingTop>2pt</PaddingTop>
-                                  <PaddingBottom>2pt</PaddingBottom>
-                                </Style>
-                              </Textbox>
-                            </CellContents>
-                          </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
-                              <Group Name="Details" />
-                            </TablixMember>
-                            <TablixMember>
-                              <KeepWithGroup>Before</KeepWithGroup>
+                              <Group Name="Month">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!Month.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!Month.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
+                              <TablixHeader>
+                                <Size>2.5cm</Size>
+                                <CellContents>
+                                  <Textbox Name="Month">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!Month.Value</Value>
+                                            <Style>
+                                              <FontFamily>Arial</FontFamily>
+                                              <Format>d/MM/yyyy</Format>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Month</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>LightGrey</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <TablixMembers>
+                                <TablixMember />
+                              </TablixMembers>
                             </TablixMember>
                           </TablixMembers>
                         </TablixMember>
@@ -411,7 +394,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>totalForYear</Value>
+                                        <Value>Yearly Sales</Value>
                                         <Style>
                                           <FontFamily>Arial</FontFamily>
                                         </Style>
@@ -426,6 +409,7 @@ FROM            Dimension.City AS City_1 INNER JOIN
                                     <Color>LightGrey</Color>
                                     <Style>Solid</Style>
                                   </Border>
+                                  <BackgroundColor>Lime</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -434,7 +418,6 @@ FROM            Dimension.City AS City_1 INNER JOIN
                               </Textbox>
                             </CellContents>
                           </TablixHeader>
-                          <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
@@ -443,22 +426,64 @@ FROM            Dimension.City AS City_1 INNER JOIN
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>FloridaAnnualSales</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!State_Province.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>Florida</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
             <SortExpressions>
               <SortExpression>
-                <Value>=Fields!Month.Value</Value>
-                <Direction>Descending</Direction>
+                <Value>=Fields!Calendar_Month_Number.Value</Value>
               </SortExpression>
             </SortExpressions>
             <Top>1.87537cm</Top>
             <Left>2.2987cm</Left>
-            <Height>2.4cm</Height>
-            <Width>7.5cm</Width>
+            <Height>1.8cm</Height>
+            <Width>8.84938cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Monthly-Yearly Sales Report (Florida)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.31432cm</Top>
+            <Left>3.67453cm</Left>
+            <Height>1.10271cm</Height>
+            <Width>5.14583cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.61458in</Height>
         <Style />
