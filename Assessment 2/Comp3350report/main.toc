@@ -6,13 +6,9 @@
 \contentsline {section}{\numberline {2}Item Sales Tends by Year}{1}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Stock Items By Sales Count}{1}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Items By Total Sales}{2}{subsection.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Items Ordered by State}{2}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Item By Sales Territories}{2}{subsection.2.4}% 
-\contentsline {subsection}{\numberline {2.5}Profit by Item}{2}{subsection.2.5}% 
-\contentsline {section}{\numberline {3}Item Purchase Tends by Year}{2}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}2013}{2}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}2014}{2}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}2015}{2}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}2016}{3}{subsection.3.4}% 
-\contentsline {section}{\numberline {4}Conclusions and Recommendations}{3}{section.4}% 
-\contentsline {section}{\numberline {5}Appendix}{5}{section.5}% 
+\contentsline {subsection}{\numberline {2.3}Items Ordered by State \& Sales Territories}{2}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Profit by Item}{2}{subsection.2.4}% 
+\contentsline {section}{\numberline {3}Item Purchase Tends by Year}{3}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Ordered Quantity by Month}{3}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Suppliers by Items}{3}{subsection.3.2}% 
+\contentsline {section}{\numberline {4}Appendix}{5}{section.4}% 

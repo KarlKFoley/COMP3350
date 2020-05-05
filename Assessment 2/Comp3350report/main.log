@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.3)  5 MAY 2020 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.3)  5 MAY 2020 17:13
 entering extended mode
 **"c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/main.tex"
 ("c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/main.tex"
@@ -649,7 +649,7 @@ LaTeX Info: Redefining \nameref on input line 53.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<images/uon-logo-square.png, id=98, 301.125pt x 301.125pt>
+<images/uon-logo-square.png, id=82, 301.125pt x 301.125pt>
 File: images/uon-logo-square.png Graphic file (type png)
 <use images/uon-logo-square.png>
 Package pdftex.def Info: images/uon-logo-square.png  used on input line 67.
@@ -660,24 +660,24 @@ Package pdftex.def Info: images/uon-logo-square.png  used on input line 67.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [1] ("c:/Users\Karl Foley\Documents\COMP3350\Assessment 2\Comp3350report\main.lof")
+ [1] ("c:/Users\Karl Foley\Documents\COMP3350\Assessment 2\Comp3350report\main.lof" [2])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [2]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+ [3]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.155 
-       [1] [2]
-<images/Item sales2013.pdf, id=226, 1035.87pt x 614.295pt>
+l.154 \end{flushleft}
+                      [1] [2]
+<images/Item sales2013.pdf, id=298, 1035.87pt x 614.295pt>
 File: images/Item sales2013.pdf Graphic file (type pdf)
 <use images/Item sales2013.pdf>
-Package pdftex.def Info: images/Item sales2013.pdf  used on input line 216.
+Package pdftex.def Info: images/Item sales2013.pdf  used on input line 192.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
-<images/Item sales2014.pdf, id=227, 1035.87pt x 614.295pt>
+<images/Item sales2014.pdf, id=299, 1035.87pt x 614.295pt>
 File: images/Item sales2014.pdf Graphic file (type pdf)
 <use images/Item sales2014.pdf>
-Package pdftex.def Info: images/Item sales2014.pdf  used on input line 223.
+Package pdftex.def Info: images/Item sales2014.pdf  used on input line 199.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
  [3] [4]
 Overfull \vbox (34.97606pt too high) has occurred while \output is active []
@@ -686,15 +686,15 @@ Overfull \vbox (34.97606pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Item sales2013.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<images/Item sales2015.pdf, id=279, 1035.87pt x 614.295pt>
+<images/Item sales2015.pdf, id=351, 1035.87pt x 614.295pt>
 File: images/Item sales2015.pdf Graphic file (type pdf)
 <use images/Item sales2015.pdf>
-Package pdftex.def Info: images/Item sales2015.pdf  used on input line 230.
+Package pdftex.def Info: images/Item sales2015.pdf  used on input line 206.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
-<images/Item sales2016.pdf, id=280, 1035.87pt x 614.295pt>
+<images/Item sales2016.pdf, id=352, 1035.87pt x 614.295pt>
 File: images/Item sales2016.pdf Graphic file (type pdf)
 <use images/Item sales2016.pdf>
-Package pdftex.def Info: images/Item sales2016.pdf  used on input line 237.
+Package pdftex.def Info: images/Item sales2016.pdf  used on input line 213.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
  [6 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Item sales2014.pdf
 
@@ -703,13 +703,13 @@ pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Item sales2015.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<images/Sales/stock item by Sale Count2013.png, id=366, 804.00375pt x 327.2225pt>
+<images/Sales/stock item by Sale Count2013.png, id=438, 804.00375pt x 327.2225pt>
 File: images/Sales/stock item by Sale Count2013.png Graphic file (type png)
 <use images/Sales/stock item by Sale Count2013.png>
-Package pdftex.def Info: images/Sales/stock item by Sale Count2013.png  used on input line 245.
+Package pdftex.def Info: images/Sales/stock item by Sale Count2013.png  used on input line 221.
 (pdftex.def)             Requested size: 497.92322pt x 202.64616pt.
 
-Overfull \hbox (67.9186pt too wide) in paragraph at lines 244--246
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 220--222
  [][] 
  []
 
@@ -717,44 +717,44 @@ Overfull \hbox (67.9186pt too wide) in paragraph at lines 244--246
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Item sales2016.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<images/Sales/stock item by Sale Count2014.png, id=410, 645.41125pt x 316.18124pt>
+<images/Sales/stock item by Sale Count2014.png, id=482, 645.41125pt x 316.18124pt>
 File: images/Sales/stock item by Sale Count2014.png Graphic file (type png)
 <use images/Sales/stock item by Sale Count2014.png>
-Package pdftex.def Info: images/Sales/stock item by Sale Count2014.png  used on input line 253.
+Package pdftex.def Info: images/Sales/stock item by Sale Count2014.png  used on input line 229.
 (pdftex.def)             Requested size: 497.92322pt x 243.92828pt.
 
-Overfull \hbox (67.9186pt too wide) in paragraph at lines 252--254
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 228--230
  [][] 
  []
 
-<images/Sales/stock item by Sale Count2015.png, id=411, 798.985pt x 321.2pt>
+<images/Sales/stock item by Sale Count2015.png, id=483, 798.985pt x 321.2pt>
 File: images/Sales/stock item by Sale Count2015.png Graphic file (type png)
 <use images/Sales/stock item by Sale Count2015.png>
-Package pdftex.def Info: images/Sales/stock item by Sale Count2015.png  used on input line 261.
+Package pdftex.def Info: images/Sales/stock item by Sale Count2015.png  used on input line 237.
 (pdftex.def)             Requested size: 497.92322pt x 200.17117pt.
 
-Overfull \hbox (67.9186pt too wide) in paragraph at lines 260--262
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 236--238
  [][] 
  []
 
-<images/Sales/stock item by Sale Count2016.png, id=412, 775.89874pt x 316.18124pt>
+<images/Sales/stock item by Sale Count2016.png, id=484, 775.89874pt x 316.18124pt>
 File: images/Sales/stock item by Sale Count2016.png Graphic file (type png)
 <use images/Sales/stock item by Sale Count2016.png>
-Package pdftex.def Info: images/Sales/stock item by Sale Count2016.png  used on input line 268.
+Package pdftex.def Info: images/Sales/stock item by Sale Count2016.png  used on input line 244.
 (pdftex.def)             Requested size: 497.92322pt x 202.91013pt.
 
-Overfull \hbox (67.9186pt too wide) in paragraph at lines 267--269
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 243--245
  [][] 
  []
 
 [9 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/stock item by Sale Count2013.png> <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/stock item by Sale Count2014.png>]
-<images/Sales/Total Sales By stock item2013.png, id=419, 454.69875pt x 538.01pt>
+<images/Sales/Total Sales By stock item2013.png, id=492, 454.69875pt x 538.01pt>
 File: images/Sales/Total Sales By stock item2013.png Graphic file (type png)
 <use images/Sales/Total Sales By stock item2013.png>
-Package pdftex.def Info: images/Sales/Total Sales By stock item2013.png  used on input line 276.
+Package pdftex.def Info: images/Sales/Total Sales By stock item2013.png  used on input line 252.
 (pdftex.def)             Requested size: 454.69763pt x 538.00868pt.
 
-Overfull \hbox (24.69301pt too wide) in paragraph at lines 275--277
+Overfull \hbox (24.69301pt too wide) in paragraph at lines 251--253
  [][] 
  []
 
@@ -762,13 +762,13 @@ Overfull \hbox (24.69301pt too wide) in paragraph at lines 275--277
 Overfull \vbox (8.36543pt too high) has occurred while \output is active []
 
  [11 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Total Sales By stock item2013.png>]
-<images/Sales/Total Sales By stock item2014.png, id=432, 451.6875pt x 547.04375pt>
+<images/Sales/Total Sales By stock item2014.png, id=504, 451.6875pt x 547.04375pt>
 File: images/Sales/Total Sales By stock item2014.png Graphic file (type png)
 <use images/Sales/Total Sales By stock item2014.png>
-Package pdftex.def Info: images/Sales/Total Sales By stock item2014.png  used on input line 284.
+Package pdftex.def Info: images/Sales/Total Sales By stock item2014.png  used on input line 260.
 (pdftex.def)             Requested size: 451.68639pt x 547.0424pt.
 
-Overfull \hbox (21.68176pt too wide) in paragraph at lines 283--285
+Overfull \hbox (21.68176pt too wide) in paragraph at lines 259--261
  [][] 
  []
 
@@ -776,13 +776,13 @@ Overfull \hbox (21.68176pt too wide) in paragraph at lines 283--285
 Overfull \vbox (17.39915pt too high) has occurred while \output is active []
 
  [12 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Total Sales By stock item2014.png>]
-<images/Sales/Total Sales By stock item2015.png, id=438, 448.67625pt x 544.0325pt>
+<images/Sales/Total Sales By stock item2015.png, id=510, 448.67625pt x 544.0325pt>
 File: images/Sales/Total Sales By stock item2015.png Graphic file (type png)
 <use images/Sales/Total Sales By stock item2015.png>
-Package pdftex.def Info: images/Sales/Total Sales By stock item2015.png  used on input line 292.
+Package pdftex.def Info: images/Sales/Total Sales By stock item2015.png  used on input line 268.
 (pdftex.def)             Requested size: 448.67516pt x 544.03117pt.
 
-Overfull \hbox (18.67053pt too wide) in paragraph at lines 291--293
+Overfull \hbox (18.67053pt too wide) in paragraph at lines 267--269
  [][] 
  []
 
@@ -790,83 +790,318 @@ Overfull \hbox (18.67053pt too wide) in paragraph at lines 291--293
 Overfull \vbox (14.38792pt too high) has occurred while \output is active []
 
  [13 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Total Sales By stock item2015.png>]
-<images/Sales/Total Sales By stock item2016.png, id=444, 461.725pt x 505.89pt>
+<images/Sales/Total Sales By stock item2016.png, id=516, 461.725pt x 505.89pt>
 File: images/Sales/Total Sales By stock item2016.png Graphic file (type png)
 <use images/Sales/Total Sales By stock item2016.png>
-Package pdftex.def Info: images/Sales/Total Sales By stock item2016.png  used on input line 300.
+Package pdftex.def Info: images/Sales/Total Sales By stock item2016.png  used on input line 276.
 (pdftex.def)             Requested size: 461.72388pt x 505.88875pt.
 
-Overfull \hbox (31.71925pt too wide) in paragraph at lines 299--301
+Overfull \hbox (31.71925pt too wide) in paragraph at lines 275--277
  [][] 
  []
 
-<images/Sales/Sale Count by State Province2013.png, id=445, 793.96625pt x 412.54124pt>
+<images/Sales/Sale Count by State Province2013.png, id=517, 793.96625pt x 412.54124pt>
 File: images/Sales/Sale Count by State Province2013.png Graphic file (type png)
 <use images/Sales/Sale Count by State Province2013.png>
-Package pdftex.def Info: images/Sales/Sale Count by State Province2013.png  used on input line 308.
+Package pdftex.def Info: images/Sales/Sale Count by State Province2013.png  used on input line 284.
 (pdftex.def)             Requested size: 497.92322pt x 258.72522pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 283--285
+ [][] 
+ []
+
+[14 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Total Sales By stock item2016.png>]
+<images/Sales/Sale Count by State Province2014.png, id=523, 793.96625pt x 413.545pt>
+File: images/Sales/Sale Count by State Province2014.png Graphic file (type png)
+<use images/Sales/Sale Count by State Province2014.png>
+Package pdftex.def Info: images/Sales/Sale Count by State Province2014.png  used on input line 292.
+(pdftex.def)             Requested size: 497.92322pt x 259.3547pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 291--293
+ [][] 
+ []
+
+[15 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by State Province2013.png>]
+<images/Sales/Sale Count by State Province2015.png, id=530, 793.96625pt x 413.545pt>
+File: images/Sales/Sale Count by State Province2015.png Graphic file (type png)
+<use images/Sales/Sale Count by State Province2015.png>
+Package pdftex.def Info: images/Sales/Sale Count by State Province2015.png  used on input line 300.
+(pdftex.def)             Requested size: 497.92322pt x 259.3547pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 299--301
+ [][] 
+ []
+
+[16 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by State Province2014.png>]
+<images/Sales/Sale Count by State Province2016.png, id=536, 792.9625pt x 414.54875pt>
+File: images/Sales/Sale Count by State Province2016.png Graphic file (type png)
+<use images/Sales/Sale Count by State Province2016.png>
+Package pdftex.def Info: images/Sales/Sale Count by State Province2016.png  used on input line 308.
+(pdftex.def)             Requested size: 497.92322pt x 260.31314pt.
 
 Overfull \hbox (67.9186pt too wide) in paragraph at lines 307--309
  [][] 
  []
 
-[14 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Total Sales By stock item2016.png>]
-<images/item Purchase2013.pdf, id=451, 1035.87pt x 614.295pt>
+[17 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by State Province2015.png>]
+<images/Sales/Sale Count by Sales Territory2013.png, id=542, 391.4625pt x 299.1175pt>
+File: images/Sales/Sale Count by Sales Territory2013.png Graphic file (type png)
+<use images/Sales/Sale Count by Sales Territory2013.png>
+Package pdftex.def Info: images/Sales/Sale Count by Sales Territory2013.png  used on input line 316.
+(pdftex.def)             Requested size: 391.46153pt x 299.11676pt.
+ [18 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by State Province2016.png>]
+<images/Sales/Sale Count by Sales Territory2014.png, id=548, 379.4175pt x 293.095pt>
+File: images/Sales/Sale Count by Sales Territory2014.png Graphic file (type png)
+<use images/Sales/Sale Count by Sales Territory2014.png>
+Package pdftex.def Info: images/Sales/Sale Count by Sales Territory2014.png  used on input line 324.
+(pdftex.def)             Requested size: 379.41656pt x 293.09427pt.
+ [19 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by Sales Territory2013.png>]
+<images/Sales/Sale Count by Sales Territory2015.png, id=554, 386.44376pt x 298.11375pt>
+File: images/Sales/Sale Count by Sales Territory2015.png Graphic file (type png)
+<use images/Sales/Sale Count by Sales Territory2015.png>
+Package pdftex.def Info: images/Sales/Sale Count by Sales Territory2015.png  used on input line 332.
+(pdftex.def)             Requested size: 386.44281pt x 298.11302pt.
+ [20 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by Sales Territory2014.png>]
+<images/Sales/Sale Count by Sales Territory2016.png, id=560, 386.44376pt x 295.1025pt>
+File: images/Sales/Sale Count by Sales Territory2016.png Graphic file (type png)
+<use images/Sales/Sale Count by Sales Territory2016.png>
+Package pdftex.def Info: images/Sales/Sale Count by Sales Territory2016.png  used on input line 340.
+(pdftex.def)             Requested size: 386.44281pt x 295.10176pt.
+ [21 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by Sales Territory2015.png>]
+<images/Sales/Profit by Stock Item2013.png, id=567, 714.67pt x 422.57875pt>
+File: images/Sales/Profit by Stock Item2013.png Graphic file (type png)
+<use images/Sales/Profit by Stock Item2013.png>
+Package pdftex.def Info: images/Sales/Profit by Stock Item2013.png  used on input line 348.
+(pdftex.def)             Requested size: 497.92322pt x 294.41678pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 347--349
+ [][] 
+ []
+
+[22 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by Sales Territory2016.png>]
+<images/Sales/Profit by Stock Item2014.png, id=573, 702.625pt x 424.58624pt>
+File: images/Sales/Profit by Stock Item2014.png Graphic file (type png)
+<use images/Sales/Profit by Stock Item2014.png>
+Package pdftex.def Info: images/Sales/Profit by Stock Item2014.png  used on input line 356.
+(pdftex.def)             Requested size: 497.92322pt x 300.8947pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 355--357
+ [][] 
+ []
+
+[23 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Profit by Stock Item2013.png>]
+<images/Sales/Profit by Stock Item2015.png, id=579, 718.685pt x 430.60875pt>
+File: images/Sales/Profit by Stock Item2015.png Graphic file (type png)
+<use images/Sales/Profit by Stock Item2015.png>
+Package pdftex.def Info: images/Sales/Profit by Stock Item2015.png  used on input line 364.
+(pdftex.def)             Requested size: 497.92322pt x 298.34247pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 363--365
+ [][] 
+ []
+
+[24 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Profit by Stock Item2014.png>]
+<images/Sales/Profit by Stock Item2016.png, id=585, 705.63625pt x 446.66875pt>
+File: images/Sales/Profit by Stock Item2016.png Graphic file (type png)
+<use images/Sales/Profit by Stock Item2016.png>
+Package pdftex.def Info: images/Sales/Profit by Stock Item2016.png  used on input line 372.
+(pdftex.def)             Requested size: 497.92322pt x 315.18776pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 371--373
+ [][] 
+ []
+
+[25 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Profit by Stock Item2015.png>]
+<images/item Purchase2013.pdf, id=591, 1035.87pt x 614.295pt>
 File: images/item Purchase2013.pdf Graphic file (type pdf)
 <use images/item Purchase2013.pdf>
-Package pdftex.def Info: images/item Purchase2013.pdf  used on input line 324.
+Package pdftex.def Info: images/item Purchase2013.pdf  used on input line 380.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
-<images/item Purchase2014.pdf, id=452, 1035.87pt x 614.295pt>
+<images/item Purchase2014.pdf, id=592, 1035.87pt x 614.295pt>
 File: images/item Purchase2014.pdf Graphic file (type pdf)
 <use images/item Purchase2014.pdf>
-Package pdftex.def Info: images/item Purchase2014.pdf  used on input line 331.
+Package pdftex.def Info: images/item Purchase2014.pdf  used on input line 387.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
- [15 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Sale Count by State Province2013.png>]
-<images/item Purchase2015.pdf, id=458, 1035.87pt x 614.295pt>
+ [26 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Sales/Profit by Stock Item2016.png>]
+<images/item Purchase2015.pdf, id=598, 1035.87pt x 614.295pt>
 File: images/item Purchase2015.pdf Graphic file (type pdf)
 <use images/item Purchase2015.pdf>
-Package pdftex.def Info: images/item Purchase2015.pdf  used on input line 338.
+Package pdftex.def Info: images/item Purchase2015.pdf  used on input line 394.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
- [16 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2013.pdf
+ [27 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2013.pdf
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2013.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<images/item Purchase2016.pdf, id=498, 1035.87pt x 614.295pt>
+<images/item Purchase2016.pdf, id=638, 1035.87pt x 614.295pt>
 File: images/item Purchase2016.pdf Graphic file (type pdf)
 <use images/item Purchase2016.pdf>
-Package pdftex.def Info: images/item Purchase2016.pdf  used on input line 345.
+Package pdftex.def Info: images/item Purchase2016.pdf  used on input line 401.
 (pdftex.def)             Requested size: 526.37598pt x 312.1615pt.
- [17 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2014.pdf
+ [28 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2014.pdf
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2014.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [18 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2015.pdf
+>] [29 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2015.pdf
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2015.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [19 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2016.pdf
+>]
+<images/Purchases/Ordered Quantity by Month2013.png, id=715, 784.9325pt x 417.56pt>
+File: images/Purchases/Ordered Quantity by Month2013.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Month2013.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Month2013.png  used on input line 409.
+(pdftex.def)             Requested size: 497.92322pt x 264.88641pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 408--410
+ [][] 
+ []
+
+[30 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2016.pdf
 
 pdfTeX warning: pdflatex (file c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/item Purchase2016.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
+<images/Purchases/Ordered Quantity by Month2014.png, id=754, 782.925pt x 437.635pt>
+File: images/Purchases/Ordered Quantity by Month2014.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Month2014.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Month2014.png  used on input line 417.
+(pdftex.def)             Requested size: 497.92322pt x 278.3292pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 416--418
+ [][] 
+ []
+
+[31 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Month2013.png>]
+<images/Purchases/Ordered Quantity by Month2015.png, id=760, 778.91pt x 436.63126pt>
+File: images/Purchases/Ordered Quantity by Month2015.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Month2015.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Month2015.png  used on input line 425.
+(pdftex.def)             Requested size: 497.92322pt x 279.1166pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 424--426
+ [][] 
+ []
+
+[32 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Month2014.png>]
+<images/Purchases/Ordered Quantity by Month2016.png, id=766, 787.94376pt x 419.5675pt>
+File: images/Purchases/Ordered Quantity by Month2016.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Month2016.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Month2016.png  used on input line 433.
+(pdftex.def)             Requested size: 497.92322pt x 265.13557pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 432--434
+ [][] 
+ []
+
+[33 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Month2015.png>]
+<images/Purchases/Ordered Quantity by Stock Item2013.png, id=773, 804.00375pt x 312.16624pt>
+File: images/Purchases/Ordered Quantity by Stock Item2013.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Stock Item2013.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Stock Item2013.png  used on input line 441.
+(pdftex.def)             Requested size: 497.92322pt x 193.32196pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 440--442
+ [][] 
+ []
+
+<images/Purchases/Ordered Quantity by Stock Item2014.png, id=774, 810.02625pt x 344.28625pt>
+File: images/Purchases/Ordered Quantity by Stock Item2014.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Stock Item2014.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Stock Item2014.png  used on input line 449.
+(pdftex.def)             Requested size: 497.92322pt x 211.63759pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 448--450
+ [][] 
+ []
+
+[34 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Month2016.png> <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Stock Item2013.png>]
+<images/Purchases/Ordered Quantity by Stock Item2015.png, id=781, 807.015pt x 344.28625pt>
+File: images/Purchases/Ordered Quantity by Stock Item2015.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Stock Item2015.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Stock Item2015.png  used on input line 457.
+(pdftex.def)             Requested size: 497.92322pt x 212.4256pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 456--458
+ [][] 
+ []
+
+<images/Purchases/Ordered Quantity by Stock Item2016.png, id=782, 810.02625pt x 343.2825pt>
+File: images/Purchases/Ordered Quantity by Stock Item2016.png Graphic file (type png)
+<use images/Purchases/Ordered Quantity by Stock Item2016.png>
+Package pdftex.def Info: images/Purchases/Ordered Quantity by Stock Item2016.png  used on input line 465.
+(pdftex.def)             Requested size: 497.92322pt x 211.02057pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 464--466
+ [][] 
+ []
+
+[35 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Stock Item2014.png> <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Stock Item2015.png>]
+<images/Purchases/Supplies by item by quantity2013.png, id=789, 884.30376pt x 328.22626pt>
+File: images/Purchases/Supplies by item by quantity2013.png Graphic file (type png)
+<use images/Purchases/Supplies by item by quantity2013.png>
+Package pdftex.def Info: images/Purchases/Supplies by item by quantity2013.png  used on input line 473.
+(pdftex.def)             Requested size: 497.92322pt x 184.81712pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 472--474
+ [][] 
+ []
+
+<images/Purchases/Supplies by item by quantity2014.png, id=790, 886.31125pt x 294.09875pt>
+File: images/Purchases/Supplies by item by quantity2014.png Graphic file (type png)
+<use images/Purchases/Supplies by item by quantity2014.png>
+Package pdftex.def Info: images/Purchases/Supplies by item by quantity2014.png  used on input line 481.
+(pdftex.def)             Requested size: 497.92322pt x 165.2237pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 480--482
+ [][] 
+ []
+
+[36 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Ordered Quantity by Stock Item2016.png> <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Supplies by item by quantity2013.png>]
+<images/Purchases/Supplies by item by quantity2015.png, id=797, 883.3pt x 298.11375pt>
+File: images/Purchases/Supplies by item by quantity2015.png Graphic file (type png)
+<use images/Purchases/Supplies by item by quantity2015.png>
+Package pdftex.def Info: images/Purchases/Supplies by item by quantity2015.png  used on input line 489.
+(pdftex.def)             Requested size: 497.92322pt x 168.04793pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 488--490
+ [][] 
+ []
+
+<images/Purchases/Supplies by item by quantity2016.png, id=798, 879.285pt x 324.21124pt>
+File: images/Purchases/Supplies by item by quantity2016.png Graphic file (type png)
+<use images/Purchases/Supplies by item by quantity2016.png>
+Package pdftex.def Info: images/Purchases/Supplies by item by quantity2016.png  used on input line 497.
+(pdftex.def)             Requested size: 497.92322pt x 183.59525pt.
+
+Overfull \hbox (67.9186pt too wide) in paragraph at lines 496--498
+ [][] 
+ []
+
+[37 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Supplies by item by quantity2014.png> <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Supplies by item by quantity2015.png>]
+<images/Purchases/Supplies and postcode.png, id=805, 312.16624pt x 398.48875pt>
+File: images/Purchases/Supplies and postcode.png Graphic file (type png)
+<use images/Purchases/Supplies and postcode.png>
+Package pdftex.def Info: images/Purchases/Supplies and postcode.png  used on input line 505.
+(pdftex.def)             Requested size: 312.16548pt x 398.48778pt.
+ [38 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Supplies by item by quantity2016.png>] [39 <c:/Users/Karl Foley/Documents/COMP3350/Assessment 2/Comp3350report/images/Purchases/Supplies and postcode.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 510.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 510.
  ("c:/Users\Karl Foley\Documents\COMP3350\Assessment 2\Comp3350report\main.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 510.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 510.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 655A69DE86B8426D7CB4F8FE2CFB3435;1019.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
+(rerunfilecheck)             Checksum: 9C30FE6B6514DEFE50EDF496F500A40A;827.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 510.
  ) 
 Here is how much of TeX's memory you used:
- 19420 strings out of 492453
- 371993 string characters out of 3117739
- 454472 words of memory out of 3000000
- 23276 multiletter control sequences out of 15000+200000
+ 19650 strings out of 492453
+ 381537 string characters out of 3117739
+ 460765 words of memory out of 3000000
+ 23440 multiletter control sequences out of 15000+200000
  10424 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,83p,970b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,8n,83p,1080b,455s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Karl Foley/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Karl Foley/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Karl Foley/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Karl Foley/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "c:/Users\Karl Foley\Documents\COMP3350\Assessment 2\Comp3350report\main.pdf" (22 pages, 3890053 bytes).
+Output written on "c:/Users\Karl Foley\Documents\COMP3350\Assessment 2\Comp3350report\main.pdf" (43 pages, 9945826 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 335 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 856 PDF objects out of 1000 (max. 8388607)
+ 98 named destinations out of 1000 (max. 500000)
+ 423 words of extra memory for PDF output out of 10000 (max. 10000000)
 
